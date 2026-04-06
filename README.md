@@ -1,4 +1,4 @@
-<img width="1920" height="1080" alt="Frontend - Edit" src="https://github.com/user-attachments/assets/ce0e628f-b5bf-4380-b46a-bd92aca1812d" /><img width="1920" height="1080" alt="Frontend - Edit" src="https://github.com/user-attachments/assets/ce0e628f-b5bf-4380-b46a-bd92aca1812d" /><img width="1920" height="1080" alt="Frontend - Edit" src="https://github.com/user-attachments/assets/f207f825-268c-423d-9949-2de41d09fd36" /><img width="1920" height="1080" alt="Frontend - Edit" src="https://github.com/user-attachments/assets/f207f825-268c-423d-9949-2de41d09fd36" /><img width="1920" height="1080" alt="Frontend - PaymentsList" src="https://github.com/user-attachments/assets/0ee22967-d4a4-4bcb-80f3-3ea36c36f111" /><img width="1920" height="1080" alt="Frontend - PaymentsList" src="https://github.com/user-attachments/assets/0ee22967-d4a4-4bcb-80f3-3ea36c36f111" />🚀 Payments Portal – Full Stack Application
+🚀 Payments Portal – Full Stack Application
 A full-stack Payments Management System built using Angular 15 and .NET 8 Web API, following Clean Architecture, Dapper, and SQL Server Stored Procedures.
 
 📌 Summary
