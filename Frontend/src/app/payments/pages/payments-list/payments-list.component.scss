@@ -1,0 +1,42 @@
+.payments-header {
+  gap: 12px;
+}
+
+.payments-grid-card {
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.payments-grid-table thead th {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  color: #495057;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.9rem 1rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.payments-grid-table tbody td {
+  border-bottom: 1px solid #eef1f4;
+  padding: 0.9rem 1rem;
+  vertical-align: middle;
+}
+
+.payments-grid-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.payments-grid-table tbody tr:hover {
+  background-color: #f9fcff;
+}
+
+@media (max-width: 768px) {
+  .payments-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

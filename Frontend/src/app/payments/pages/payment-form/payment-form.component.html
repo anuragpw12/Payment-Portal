@@ -1,0 +1,58 @@
+<section class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h2 class="h4 mb-3">{{ isEditMode ? 'Edit Payment' : 'New Payment' }}</h2>
+
+          <div *ngIf="isLoading" class="alert alert-info">Loading payment...</div>
+          <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+          <form [formGroup]="paymentForm" (ngSubmit)="save()" novalidate>
+            <div class="mb-3">
+              <label for="amount" class="form-label">Amount</label>
+              <input
+                id="amount"
+                type="number"
+                step="0.01"
+                class="form-control"
+                formControlName="amount"
+                [class.is-invalid]="amountControl.touched && amountControl.invalid"
+              />
+              <div class="invalid-feedback" *ngIf="amountControl.touched && amountControl.errors?.['required']">
+                Amount is required.
+              </div>
+              <div class="invalid-feedback" *ngIf="amountControl.touched && amountControl.errors?.['min']">
+                Amount must be greater than zero.
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label for="currency" class="form-label">Currency</label>
+              <select
+                id="currency"
+                class="form-select"
+                formControlName="currency"
+                [class.is-invalid]="currencyControl.touched && currencyControl.invalid"
+              >
+                <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+              </select>
+              <div class="invalid-feedback" *ngIf="currencyControl.touched && currencyControl.errors?.['required']">
+                Currency is required.
+              </div>
+            </div>
+
+            <div class="d-flex gap-2">
+              <button type="submit" class="btn btn-primary" [disabled]="isSaving || isLoading">
+                {{ isSaving ? 'Saving...' : 'Save Payment' }}
+              </button>
+              <button type="button" class="btn btn-outline-secondary" (click)="cancel()" [disabled]="isSaving">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

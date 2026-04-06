@@ -1,0 +1,17 @@
+.confirm-toast {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.confirm-toast__message {
+  margin-bottom: 15px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.confirm-toast__actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}

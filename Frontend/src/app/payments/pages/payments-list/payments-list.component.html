@@ -1,0 +1,48 @@
+<div class="container py-4">
+  <div class="d-flex align-items-center justify-content-between mb-3 payments-header">
+    <h2 class="m-0">Payments</h2>
+    <div class="d-flex gap-2">
+      <button class="btn btn-primary" (click)="onAddPayment()">Add Payment</button>
+      <button class="btn btn-outline-secondary" (click)="loadPayments()" [disabled]="isLoading">Refresh</button>
+    </div>
+  </div>
+
+  <div *ngIf="isLoading" class="alert alert-info">Loading payments...</div>
+  <div *ngIf="isDeleting" class="alert alert-warning">Deleting payment...</div>
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+  <div class="card shadow-sm payments-grid-card" *ngIf="!isLoading && !errorMessage">
+    <div class="table-responsive">
+      <table class="table align-middle payments-grid-table mb-0">
+        <thead>
+          <tr>
+            <th>Reference</th>
+            <th>Amount</th>
+            <th>Currency</th>
+            <th>Created At</th>
+            <th class="text-end">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let payment of payments">
+            <td>{{ payment.reference }}</td>
+            <td>{{ payment.amount | number: '1.2-2' }}</td>
+            <td>{{ payment.currency }}</td>
+            <td>{{ payment.createdAt | date: 'medium' }}</td>
+            <td class="text-end">
+              <div class="btn-group btn-group-sm">
+                <button type="button" class="btn btn-outline-primary" (click)="onEditPayment(payment)">Edit</button>
+                <button type="button" class="btn btn-outline-danger" (click)="onDeletePayment(payment)" [disabled]="isDeleting">
+                  Delete
+                </button>
+              </div>
+            </td>
+          </tr>
+          <tr *ngIf="payments.length === 0">
+            <td colspan="5" class="text-center text-muted py-4">No payments found.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
