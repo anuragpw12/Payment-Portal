@@ -13,4 +13,8 @@ public sealed class CreatePaymentRequestDto
 
     [Required]
     public Guid ClientRequestId { get; init; }
+
+    public string? Description { get; init; }
+
+    public string? Metadata { get; init; }
 }
