@@ -48,7 +48,7 @@ public sealed class PaymentReportController : ControllerBase
         {
             return BadRequest(new ProblemDetails
             {
-                Title = "Validation error",
+                Title = "Validation errors",
                 Detail = ex.Message,
                 Status = StatusCodes.Status400BadRequest
             });
